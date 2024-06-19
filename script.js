@@ -1,4 +1,3 @@
-alert("Site is still in under construction")
 const bar = document.getElementById("bar");
 const nav = document.getElementById("Nav-bar");
 const close = document.getElementById("close");
