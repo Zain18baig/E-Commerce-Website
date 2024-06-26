@@ -34,39 +34,25 @@ function showMessage(message, divId) {
   }, 5000);
 }
 const app = initializeApp(firebaseConfig);
-const signUp = document.getElementById("btn");
-signUp.addEventListener("click", (event) => {
+const logIn = document.getElementById("btn-log-in");
+logIn.addEventListener("click", () => {
   event.preventDefault();
-  const firstName = document.getElementById("firstname").value;
-  const lastName = document.getElementById("lastname").value;
-  const email = document.getElementById("email-input-signup").value;
-  const password = document.getElementById("password-input-signup").value;
+  const email = document.getElementById("email-input").value;
+  const password = document.getElementById("password-input").value;
   const auth = getAuth();
-  const db = getFirestore();
-  createUserWithEmailAndPassword(auth, email, password)
+  signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
+      showMessage("log in sucessfull", "signUpMessage");
       const user = userCredential.user;
-      const userData = {
-        email: email,
-        firstname: firstName,
-        lastname: lastName,
-      };
-      showMessage("Account Created sucessfully", "signupMessage");
-      const docRef = doc(db, "users", user.uid);
-      setDoc(docRef, userData)
-        .then(() => {
-          window.location.href = "./login.html";
-        })
-        .catch((error) => {
-          console.error("error writing document", error);
-        });
+      localStorage.setItem("loggedInUserId", user.uid);
+      window.location.href = "./index.html";
     })
     .catch((error) => {
       const errorCode = error.code;
-      if (errorCode === "auth/email-already-in-use") {
-        showMessage("Email address aleready exsist", "signupMessage");
+      if (errorCode === "auth/invalid-credential") {
+        showMessage("Incorrect Email or passworsd", "signUpMessage");
       } else {
-        showMessage("unable to create user ", "signupMessage");
+        showMessage("account does not exsisit", "signUpMessage");
       }
     });
 });

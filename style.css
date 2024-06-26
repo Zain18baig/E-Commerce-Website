@@ -620,10 +620,20 @@ footer a:hover {
   }
   /*login*/
   .form {
-    
     width: 100vw;
-   
-}
+  }
+  /*log in page*/
+  .form-login {
+    width: 100vw;
+  }
+  #email-input {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 20px;
+    outline: 0;
+    border-style: none;
+    font-size: 20px;
+  }
 }
 /*shop page*/
 #page-header {
@@ -794,22 +804,21 @@ footer a:hover {
   border-radius: 20px;
 }
 /*Login form */
-.body{
-  background-color: #E3E6F3;
+.body {
+  background-color: #e3e6f3;
 }
-.container{
+.container {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.form-login{
-  
+.form-login {
   margin-top: 90px;
   background-color: #d0d7f7;
-  width: 30vw;
-  height: 50vh;
+  width: 40vw;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.2);
@@ -817,29 +826,27 @@ footer a:hover {
   padding: 10px;
   position: relative;
 }
-.form-login :nth-child(2){
+.form-login :nth-child(2) {
   padding-bottom: 5px;
 }
-.form-login h1{
+.form-login h1 {
   padding-bottom: 5px;
   padding-top: 15px;
 }
-.login-input{
+.login-input {
   padding: 10px;
   margin-top: 10px;
   border-radius: 20px;
   outline: 0;
   border-style: none;
   font-size: 20px;
-
-  
 }
-.heading{
+.heading {
   text-align: center;
   font-size: 48px;
   margin-right: 10%;
 }
-p{
+p {
   font: bolder;
   font-weight: 200;
   font-size: 20px;
@@ -847,7 +854,7 @@ p{
   padding-top: 15px;
   margin-left: 10px;
 }
-#password-input{
+#password-input {
   padding: 10px;
   margin-top: 10px;
   border-radius: 20px;
@@ -856,7 +863,7 @@ p{
   font-size: 20px;
   transition: 2s ease;
 }
-#email-input{
+#email-input {
   padding: 10px;
   margin-top: 10px;
   border-radius: 20px;
@@ -864,23 +871,31 @@ p{
   border-style: none;
   font-size: 20px;
 }
-#btn-log-in{
-  width: 20VW;
+#btn-log-in {
+  width: 20vw;
   height: 5vh;
   position: absolute;
   font-weight: 600;
   background-color: #ff5d8d;
-padding: 5px;
-border-radius: 10px;
-font-size: 15px;
-outline: 0;
-left: 15%;
-bottom: 15%;
-border-style: none;
-transition: 0.3s.0 ease;
-
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: 0;
+  left: 25%;
+  bottom: 10%;
+  border-style: none;
+  transition: 0.3s.0 ease;
 }
-#btn-log-in:hover{
-  background-color:  #f7044d;
+#btn-log-in:hover {
+  background-color: #f7044d;
 }
-
+.messageDiv {
+  background-color: #ff5d8d;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  opacity: 0;
+  animation: fadeout 7s forwards;
+}

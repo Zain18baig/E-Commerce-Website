@@ -9,7 +9,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
     <link rel="stylesheet" href="style.css" />
-
   </head>
   <body>
     <section id="header">
@@ -139,6 +138,50 @@
             opacity: 0;
             animation: fadeout 7s forwards;
           }
+          @media (max-width: 768px) {
+            .card {
+              width: 80%;
+              margin: 20px auto;
+              padding: 10px;
+            }
+            h2 {
+              font-size: 36px;
+            }
+            .card form label,
+            .card form input {
+              font-size: 16px;
+            }
+            .card form input[type="text"],
+            .card form input[type="email"],
+            .card form input[type="password"] {
+              font-size: 16px;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .card {
+              width: 90%;
+              display: flex;
+              justify-content: center;
+              position: absolute;
+              left: 5%;
+              top: 20%;
+              margin: 10px auto;
+              padding: 10px;
+            }
+            h2 {
+              font-size: 28px;
+            }
+            .card form label,
+            .card form input {
+              font-size: 14px;
+            }
+            .card form input[type="text"],
+            .card form input[type="email"],
+            .card form input[type="password"] {
+              font-size: 14px;
+            }
+          }
         </style>
       </head>
       <body>
@@ -169,6 +212,7 @@
           </form>
         </div>
         <script type="module" src="firebaseauth.js"></script>
+        <script src="./script.js"></script>
       </body>
     </html>
   </body>
